@@ -1,0 +1,15 @@
+header.header
+	h1.logo memily's Boards 
+	ul.navi-wrap
+		//- each 는 pug의 반복문
+		each v in navis
+			if v.login != undefined
+				if user.userid && v.login
+					li.navi
+						a(href=`${v.link}`)= v.name
+				if !user.userid && !v.login
+					li.navi
+						a(href=`${v.link}`)= v.name
+			else
+				li.navi
+					a(href=`${v.link}`)= v.name

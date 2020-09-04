@@ -1,0 +1,29 @@
+extends ../layout/default.layout.pug
+block content
+	.title-wrap
+		h1.title= title
+			small MySQL, Nodejs-Express를 사용한 회원관리 입니다.
+			hr
+			small.text-dark 회원이 아니신 분은 우측의 링크를 이용해 회원가입을 하시기 바랍니다.
+			a.btn.btn-success.text-light.ml-3(href="/member/join") 회원 가입
+	form(name="loginForm" method="post" action="/member/sign" onsubmit="return onLoginSubmit(this)")
+		h2.pt-5.pb-3
+			span 로그인
+			i.fa.fa-user-lock
+		table.table.member-login-tb.table-bordered
+			tbody
+				tr.border-bottom
+					td 아이디
+					td
+						input.form-control(type="text" name="userid" placeholder="아이디")
+						span.text-danger.d-none 아이디를 입력하세요.
+				tr.border-bottom
+					td 패스워드
+					td
+						input.form-control(type="password" name="userpw" placeholder="패스워드")
+						span.text-danger.d-none 패스워드를 입력하세요.
+		.bts.text-center.py-3
+			button.btn.btn-primary.mr-2 로그인
+			button.btn.btn-warning.mr-2(type="button" onclick="location.href='/member/kakao';")
+				img(src="/img/kakao_icon.png", alt="kakao-icon" style="width: 24px; margin-right: 8px")
+				span 카카오 로그인

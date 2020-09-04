@@ -1,0 +1,22 @@
+extends ../layout/gallery.layout.pug
+block content
+	.title-wrap
+		h1.title= title
+			hr
+			div.d-flex.justify-content-between
+				small MySQL, Nodejs-Express를 사용한 갤러리 입니다.
+				button.btn.btn-primary(onclick='location.href="/gallery/wr";') 작성하기
+	i.loader.fa.fa-spin.fa-spinner.fa-2x
+	.list-wrapper
+		.list-sizer
+		each v in lists
+			.list(onclick=`onModal(${v.id});`)
+				img.img.def-img(src=`${v.src}`)
+				img.img.abs-img(src=`${v.src2}`)
+				.bottom-box(onclick="event.stopPropagation();")
+					i.fa.fa-edit(onclick=`onChg(${v.id});`)
+					i.fa.fa-trash-alt(onclick=`onRev(${v.id}, '${v.savefile ? v.savefile : ''}', '${v.savefile2 ? v.savefile2 : ''}');`)
+					if v.savefile || v.savefile2
+						i.fa.fa-search(onclick=`onModal(${v.id});`)
+	include ../include/pager.pug
+	include ../include/modal.pug

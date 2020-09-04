@@ -1,0 +1,14 @@
+extends ../layout/gallery.layout.pug
+block content
+	.title-wrap
+		h1.title= title
+			hr
+			div.d-flex.justify-content-between
+				small MySQL, Nodejs-Express를 사용한 갤러리 입니다.
+				button.btn.btn-primary(onclick='location.href="/gallery/wr";') 작성하기
+	.list-wrapper
+		.grid-stack
+			each v in lists
+				.grid-stack-item(data-gs-width="3" data-gs-height="3")
+					div.p-2
+						img.img.border(src=`${v.src}`)

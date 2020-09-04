@@ -1,0 +1,4 @@
+.pagination .page-link {font-style: normal; cursor: pointer;}
+.pagination .page-item.active .page-link {color: #fff!important; background-color: #444; border-color: #222;}
+
+tbody.lists > tr {transition: all 0.3s;}

@@ -1,0 +1,13 @@
+.member-join-tb td:first-child {font-weight: bold; width: 20%; min-width: 160px;}
+.member-join-tb .form-control {max-width: 300px;}
+
+form[name='loginForm'] {max-width: 500px;margin: auto; border: 3px solid #eee; border-radius: 20px; padding: 0 2rem;}
+.member-login-tb td:first-child {font-weight: bold; width: 20%; min-width: 160px; background-color: rgb(234, 255, 245);}
+.member-login-tb .form-control {max-width: 300px;}
+
+form[name='memberForm'] > h2 > i.fa-edit,
+form[name='loginForm'] > h2 > i.fa-user-lock
+{font-size: 1.5rem; margin-left: 1rem; color: #555;}
+
+.border-red {border: 1px solid crimson;}
+.border-blue {border: 1px solid cornflowerblue;}
